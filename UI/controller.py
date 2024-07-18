@@ -9,7 +9,17 @@ class Controller:
         self._model = model
 
     def handle_graph(self, e):
-        pass
+        self._model.buildGraph()
+
+        nN, nE = self._model.getGraphDetails()
+        self._view.txt_result.controls.append(
+            ft.Text(f"Grafo correttamente creato"))
+        self._view.txt_result.controls.append(
+            ft.Text(f"Num nodi = {nN}"))
+        self._view.txt_result.controls.append(
+            ft.Text(f"Num archi = {nE}"))
+
+        self._view.update_page()
 
     def handle_countedges(self, e):
         pass
